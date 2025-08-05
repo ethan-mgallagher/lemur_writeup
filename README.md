@@ -25,7 +25,7 @@ Research was performed and several successive POCs were built on a side-project 
 </div>
 
 
-### POC Section-Only Generation Page
+### Section Generation Page
 
 <div align="left">
   <img src="generated_content.png" alt="Expanded UI with generated text" title="Expanded UI with generated text">
