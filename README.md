@@ -33,9 +33,9 @@ Research was performed and several successive POCs were built on a side-project 
 
 ## Architecture Highlights
 
-**-Observability**: Extensive logging that included model inputs/outputs, response time metrics, and vector database operations, all tied to a unique id for each user "interaction". This enabled both real-time monitoring of system behavior and reconstruction of past outputs, in context. Without high observability, LLM-based applications cannot easily scale.
+**-Observability**: Extensive logging that included model inputs/outputs, response time metrics, and vector database operations, all tied to a unique id for each user "interaction". This context was propagated throughout the system and enabled both real-time monitoring of system behavior and reconstruction of past outputs for debugging or evaluation purposes. Without high observability, LLM-based applications cannot easily scale.
 
-**-Asynchronous from ground up**: Long-running queries were designed to be async and resumable from the ground-up, with visual cues of progress given to the end user. This was crucial for navigating usage limits and LLM API latency issues in a graceful, human-friendly way.
+**-Asynchronous from ground up**: Long-running queries were designed to be async through server sent events, and resumable from the ground-up, with visual cues of progress given to the end user. This was crucial for navigating API usage limits and latency issues in a graceful, human-friendly way.
 
 **-Context Window management**: By chunking the task into "sections" and using RAG to manage context, even very large documents could be generated without degradation of outputs by the LLM or "busting" the context window, and token consumption could be mitigated by making retrieval sensitive to context size.
 
